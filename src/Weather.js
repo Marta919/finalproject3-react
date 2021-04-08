@@ -1,40 +1,12 @@
 import React, {useState} from "react";
 import axios from "axios";
+import DetailsWeather from "./DetailsWeather";
 export default function Weather (props) {
-
-
   const [weather, setWeather] = useState({loaded : false});
-
-let time = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[time.getDay()];
-
-function date(time) {
-  let minutes = time.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  let hours = time.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
- 
-  return `${day}, ${hours}:${minutes}`;
- 
-}
-
+  const [city, setCity] = useState (props.defaultCity);
   function showWeather(response) {
-    console.log(response.data.dt * 1000);
     setWeather({
-      
+      date: new Date (response.data.dt * 1000),
       loaded: true,
       city: response.data.name,
       temperature: response.data.main.temp,
@@ -45,15 +17,17 @@ function date(time) {
     });
 
   }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=e8cf93c11b2e03971616c05c042f7ad8&units=metric`;
+  function search (){
+ let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e8cf93c11b2e03971616c05c042f7ad8&units=metric`;
     axios.get(url).then(showWeather);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();   
+   search();
   }
   function updateCity(event) {
     event.preventDefault();
-    
+   setCity(event.target.value); 
   }
   let form = (
     <form onSubmit={handleSubmit}>
@@ -69,25 +43,12 @@ function date(time) {
     return (
       <div>
         {form}
-          <h3> {date(time)} </h3>
-          <h2> {weather.city} </h2>
-          <div className="row">
-        <div className="col-4 weatherTemperature">
-        <span className="icona">  <img src= {weather.icon} className="imagine" alt="weather" /> </span>
-         <span className="temp"> {Math.round(weather.temperature)}°C  </span>
-           </div>
-        <div className="col-6 main">
-        <ul className="list">
-          <li className="Description"> Description: {weather.description}</li>
-          <li className="Humidity">Humidity: {Math.round(weather.humidity)} %</li>
-          <li className="Windspeed">Wind Speed: {Math.round(weather.wind)} km/h</li>
-        </ul>
-        
+          <DetailsWeather info={weather} />
         </div>
-        </div>
-       </div>
     );
   } else {
-    return form;
+    search();
+    return  "Loading... "
+    
   }
 }
