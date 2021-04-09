@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <div className="container">
    
-    <Weather defaultCity="New York" />
+    <Weather defaultCity= "New York" />
     </div>
     <a className="Open" href="https://github.com/Marta919?tab=repositories" target="_blank" rel="noreferrer"> Coded by Marta D'Orazio </a>
 

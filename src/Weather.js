@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import DetailsWeather from "./DetailsWeather";
+
 export default function Weather (props) {
   const [weather, setWeather] = useState({loaded : false});
   const [city, setCity] = useState (props.defaultCity);
@@ -13,7 +14,7 @@ export default function Weather (props) {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+      icon: response.data.weather[0].icon
     });
 
   }
