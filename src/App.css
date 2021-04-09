@@ -2,42 +2,36 @@
   text-align: left;
 }
 
-.App-header {
-  color: black;
-}
-
 .container {
-  color: white;
   background-image: linear-gradient(
-    to top,
-    #fcc5e4 0%,
-    #fda34b 15%,
-    #ff7882 35%,
-    #c8699e 52%,
-    #7046aa 71%,
-    #0c1db8 87%,
-    #020f75 100%
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
   );
   width: 800px;
   height: 400px;
   margin: 10px;
   border: 1px solid grey;
   border-radius: 10px;
+  color: white;
 }
+
 .Description {
   text-transform: capitalize;
 }
 .button {
   margin: 10px 0 0 10px;
   border-radius: 5px;
-  border: 1px solid #ef7389;
+  border: 1px solid black;
 }
-.form {
+.formi {
   margin: 10px 0 0 0;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 .city {
-  font-size: 20px;
+  font-size: 10px;
   padding: 10px 0 0 0;
 }
 
@@ -52,18 +46,15 @@ ul {
   padding-left: 0;
   padding: 30px 0 0 100px;
 }
-button {
-  margin: 2px;
-  background-color: white;
-}
+
 .Open {
   text-decoration: none;
-  color: #08179d;
-  margin-left: 40px;
+  color: #3d1173;
+  margin-left: 120px;
 }
 .Open:hover {
   text-decoration: underline;
-  color: #08179d;
+  color: #3d1173;
 }
 .dateTime {
   font-size: 15px;
@@ -73,11 +64,10 @@ button {
   position: relative;
   top: -30px;
 }
-.icona {
-  width: 150px;
-  margin: 0 0 45px 0;
+.image {
+  width: 20px;
+  margin-top: 20px;
 }
 .temp {
-  font-size: 60px;
-  height: 400px;
+  font-size: 50px;
 }
