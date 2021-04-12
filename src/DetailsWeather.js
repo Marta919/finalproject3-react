@@ -13,7 +13,7 @@ export default function DetailsWeather (props) {
         <div className="col-6 weatherTemperature">
          <div className="clearfix">
           <div className= "float-left">
-           <WeatherIcon code= {props.info.icon} /> 
+           < WeatherIcon code= {props.info.icon} /> 
            
            <div className= "float-right">
        
