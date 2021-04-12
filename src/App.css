@@ -28,16 +28,15 @@
 }
 .formi {
   margin: 10px 0 0 0;
-  border-radius: 20px;
+  border-radius: 30px;
 }
 .city {
   font-size: 10px;
   padding: 10px 0 0 0;
 }
 
-.time {
-  font-size: 15px;
-  font-style: italic;
+.float-left {
+  margin: 0 20px 0 0;
 }
 ul {
   list-style: none;
@@ -59,11 +58,25 @@ ul {
 .dateTime {
   font-size: 15px;
 }
-.unit {
+.temp {
+  margin: 0 0 0 10px;
+}
+.celsius,
+.celsius1,
+.farenheit,
+.farenheit1 {
   font-size: medium;
   position: relative;
   top: -30px;
+  color: yellow;
 }
+.celsius1,
+.farenheit,
+.farenheit1 :hover {
+  cursor: pointer;
+  color: white;
+}
+
 .image {
   width: 20px;
   margin-top: 20px;

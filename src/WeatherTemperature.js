@@ -14,15 +14,15 @@ export default function WeatherTemperature (props){
       <div className="temperature">
         <span className="temp"> 
         {Math.round(props.celsius)} </span>
-        <span className="unit">°C | {""}<span onClick={convertToFarenheit} rel="noreferrer">°F  </span>  
-           </span> </div>
+        <span className="celsius">°C  {""}</span> <span className = "celsius1" onClick={convertToFarenheit} rel="noreferrer">| °F  </span>  
+           </div>
         );
     }else {
         return (
       <div className="temperature">
         <span className="temp"> 
         {Math.round((props.celsius * 9/5)+32)} </span>
-        <span className="unit" onClick={convertToCelsius} rel="noreferrer">°C {""} | °F  </span>  
+        <span className="farenheit" onClick={convertToCelsius} rel="noreferrer">°C |{""} </span> <span className="farenheit1"> °F  </span> 
             </div>
         );
 
