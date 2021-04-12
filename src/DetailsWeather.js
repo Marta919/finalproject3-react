@@ -10,14 +10,11 @@ export default function DetailsWeather (props) {
           <h2> {props.info.city} </h2>
           <br />
  <div className="row mt-3">
-        <div className="col-6 weatherTemperature">
+        <div className="col-3 weatherTemperature">
          <div className="clearfix">
           <div className= "float-left">
-           < WeatherIcon code= {props.info.icon} /> 
-           
-           <div className= "float-right">
-       
-           
+           <WeatherIcon code= {props.info.icon} /> 
+           <div className= "float-right">      
          <WeatherTemperature celsius= {props.info.temperature}/> 
          </div>
            </div>
@@ -30,7 +27,6 @@ export default function DetailsWeather (props) {
           <li className="Humidity">Humidity: {Math.round(props.info.humidity)} %</li>
           <li className="Windspeed">Wind Speed: {Math.round(props.info.wind)} km/h</li>
         </ul>
-        
         </div>
         </div>
        </div>
