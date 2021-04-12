@@ -11,7 +11,7 @@
     #ff1361 67%,
     #fff800 100%
   );
-  width: 600px;
+  width: 400px;
   height: 400px;
   margin: 10px;
   border: 1px solid grey;
@@ -50,7 +50,7 @@ ul {
 .Open {
   text-decoration: none;
   color: blueviolet;
-  margin-left: 40px;
+  margin-left: 130px;
 }
 .Open:hover {
   text-decoration: underline;
