@@ -48,8 +48,8 @@ ul {
 
 .Open {
   text-decoration: none;
-  color: #3d1173;
-  margin-left: 120px;
+  color: blueviolet;
+  margin-left: 30px;
 }
 .Open:hover {
   text-decoration: underline;

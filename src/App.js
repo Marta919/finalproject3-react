@@ -9,8 +9,8 @@ function App() {
    
     <Weather defaultCity= "Roccavivi" />
     </div>
-<a className="Open" href="https://github.com/Marta919" target="_blank" rel="noreferrer">Coded by Marta D'Orazio</a>
-  
+<div className="Open"><a  href="https://github.com/Marta919" target="_blank" rel="noreferrer">Coded by Marta D'Orazio</a>
+  </div>
 </div>
   );
 }
