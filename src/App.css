@@ -46,12 +46,12 @@ ul {
   padding: 30px 0 0 100px;
 }
 
-.Open {
+a {
   text-decoration: none;
   color: #3d1173;
   margin-left: 120px;
 }
-.Open:hover {
+a:hover {
   text-decoration: underline;
   color: #3d1173;
 }
