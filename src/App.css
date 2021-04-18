@@ -33,9 +33,6 @@
   padding: 10px 0 0 0;
 }
 
-.float-left {
-  margin: 0 20px 0 0;
-}
 ul {
   list-style: none;
   text-align: justify;
@@ -47,7 +44,7 @@ ul {
 .Open a {
   text-decoration: none;
   color: blueviolet;
-  margin-left: 130px;
+  margin-left: 10px;
 }
 .Open a:hover {
   text-decoration: underline;
@@ -58,6 +55,7 @@ ul {
 }
 .temp {
   margin: 0 0 0 10px;
+  font-size: 15px;
 }
 .celsius,
 .celsius1,
