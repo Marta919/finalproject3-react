@@ -2,3 +2,8 @@
   text-align: center;
   margin-top: 20px;
 }
+.gradi {
+  font-size: 2px;
+  position: relative;
+  top: -30px;
+}

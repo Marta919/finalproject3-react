@@ -1,10 +1,16 @@
-import React, {useState} from "react";
-import WeatherIcon from "./WeatherIcon";
+import React, {useState, useEffect} from "react";
+
 import "./WeatherForecast.css";
+import WeatherForecastDay from "./WeatherForecastDay";
 import axios from "axios";
 export default function WeatherForecast(props){
     let [loaded, setLoaded] = useState (false);
     let [forecast, setForecast] = useState (null);
+    useEffect (() => {
+        setLoaded (false);
+    }, [props.coordinates]);
+
+
     function handleResponse (response){
         setForecast(response.data.daily);
         setLoaded (true);
@@ -15,43 +21,21 @@ export default function WeatherForecast(props){
         return (
 <div className="WeatherForecast">
     <div className="row">
-        <div className="col">
-            <div className="day"> Wed</div>
-            <WeatherIcon code="01d" size={36} />
-            <div className="tempForecast">
-             <span className="max">19°C</span>  <span className="min">10°C</span> 
-            </div>
+        {forecast.map(function(dailyForecast, index){
+            if (index < 6 ){
+            return (
+                  <div className="col-2" key={index}>
+            <WeatherForecastDay data={dailyForecast}/>
+             </div>
+            );
+            }
+
+        })}
+                   
         </div>
-        <div className="col">
-            <div className="day"> Wed</div>
-            <WeatherIcon code="01d" size={36} />
-            <div className="tempForecast">
-             <span className="max">19°C</span>  <span className="min">10°C</span> 
-            </div>
         </div>
-        <div className="col">
-            <div className="day"> Wed</div>
-            <WeatherIcon code="01d" size={36} />
-            <div className="tempForecast">
-             <span className="max">19°C</span>  <span className="min">10°C</span> 
-            </div>
-        </div>
-        <div className="col">
-            <div className="day"> Wed</div>
-            <WeatherIcon code="01d" size={36} />
-            <div className="tempForecast">
-             <span className="max">19°C</span>  <span className="min">10°C</span> 
-            </div>
-        </div>
-        <div className="col">
-            <div className="day"> Wed</div>
-            <WeatherIcon code="01d" size={36} />
-            <div className="tempForecast">
-             <span className="max">19°C</span>  <span className="min">10°C</span> 
-            </div>
-        </div>
-    </div>
-</div>
+        
+        
     );    
     } else {
     let apiKey = "e8cf93c11b2e03971616c05c042f7ad8";
